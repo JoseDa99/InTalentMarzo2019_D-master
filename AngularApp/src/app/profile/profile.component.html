@@ -1,0 +1,32 @@
+<div *ngIf="info.token; else loggedOut">
+    <p>
+        <strong>Token:</strong> {{info.token}}.
+      </p>
+    <br><br>
+   <h5 class="text-info">Your Profile</h5>
+   <br>
+    <table class="table table-sm">
+          <tbody>
+          <tr>
+            <th scope="row">Nombre</th>
+            <td style="width: 9">{{info.nombre}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Username</th>
+            <td>{{info.username}}</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">Direccion</th>
+            <td colspan="2">{{info.direccion}}</td>
+          </tr>
+          <tr>
+              <th scope="row">Dni </th>
+              <td colspan="2">{{info.dni}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+        <button type="button" class="btn btn-info" ><a class="button-link" [routerLink]="['/profile-change', info.username]" style="color:white">Modificar datos</a></button>
+
+</div>

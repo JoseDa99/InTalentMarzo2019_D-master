@@ -1,0 +1,36 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title><b>{{title}}</b></mat-card-title>
+      <mat-card-subtitle>{{subTitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="''">
+    <mat-card-content>
+      <p>
+        {{content}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="onButtonClick()">
+        {{apiText}}
+      </button>
+    </mat-card-actions>
+    <div [class]="responsePanelClass">
+            <tr *ngFor="let producto of productos">
+     
+              <list-upload></list-upload>
+      <pre> Categoria: {{ producto.categoria }}</pre>
+      <pre> Nombre: {{ producto.nombre }}</pre>
+      <pre> Detalles: {{ producto.detalles }}</pre>
+      <pre> Cantidad: {{ producto.cantidad }} </pre>
+      <button   type="button" name="Compra ya" (click)='deleted(producto.id_producto)' class="btn btn-danger btn-sm" onclick="alert('Has comprado con exito!')">Compra ya</button>
+    
+      <br>
+      <br>
+      <br>
+      
+
+    </div>
+  </mat-card>

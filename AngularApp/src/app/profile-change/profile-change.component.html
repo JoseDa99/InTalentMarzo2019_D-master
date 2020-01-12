@@ -1,0 +1,27 @@
+<div *ngIf="isChanged, else profileForm">
+    Your changes are successful.
+  </div>
+<p>
+</p>
+<ng-template #profileForm>
+  <div class="row col-sm-6" style="max-width:350px;">
+    <form name="form" #f="ngForm">
+      <div class="form-group">
+        <label for="nombre">Tu nombre</label>
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="form.nombre" #nombre="ngModel"/>
+        <div *ngIf="f.submitted && nombre.invalid">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="direccion">Tu direccion</label>
+        <input type="text" class="form-control"  name="direccion" [(ngModel)]="form.direccion" #direccion="ngModel"/>      
+      </div>
+      <div class="form-group">
+        <button class="btn btn-info" (click)='edit(usuario.username)'>Save changes</button>
+        <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
+          Signup failed!<br/>{{errorMessage}}
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>

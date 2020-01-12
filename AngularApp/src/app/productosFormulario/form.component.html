@@ -1,0 +1,54 @@
+<div class="card bg-dark text-white">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+      <form name="form" (ngSubmit)="f.form.valid && create()" #f="ngForm" novalidate>
+        
+        <div class="form-group row">
+          <label for="categoria" class="col-form-label col-sm-2">Categoria</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="form.categoria" name="categoria" #categoria="ngModel">
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control"  [(ngModel)]="form.nombre" name="nombre" #nombre="ngModel">
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label for="detalles" class="col-form-label col-sm-2">Detalles</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control"  [(ngModel)]="form.detalles" name="detalles" #detalles="ngModel">
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label for="cantidad" class="col-form-label col-sm-2">Cantidad</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control"  [(ngModel)]="form.cantidad" name="cantidad" #cantidad="ngModel">
+          </div>
+        </div>
+
+        
+      
+      <div class="container" style="width:400px">
+        <div style="color: blue; margin-bottom: 20px">
+          <h1>{{title}}</h1>
+          <h3>{{description}}</h3>
+        </div>
+      
+        <form-upload></form-upload>
+        
+        <br/>
+        <br/>
+      </div>
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <button class="btn btn-primary" role="button" >Crear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

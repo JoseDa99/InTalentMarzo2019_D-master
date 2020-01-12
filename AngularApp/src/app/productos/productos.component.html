@@ -1,0 +1,45 @@
+<div class="card border-primary mb-3">
+  <div class="card-header">Productos</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">Listado de productos</h5>
+    <!-- <div class="my-2 text-left">
+      <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['../productosFormulario/form']">
+        Crear producto
+      </button>
+    </div>
+    -->
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>categoria</th>
+          <th>nombre</th>
+          <th>detalles</th>
+          <th>cantidad</th>
+          <th>
+            editar
+          </th>
+          <th>eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos">
+          <td>{{ producto.id_producto}}</td>
+          <td>{{ producto.categoria }}</td>
+          <td>{{ producto.nombre }}</td>
+          <td>{{ producto.detalles }}</td>
+          <td>{{ producto.cantidad }}</td>
+          <td>
+            <button type="button" name="editar" class="btn btn-primary btn-sm" [routerLink]="['/producto-edit', producto.id_producto]">Editar</button>
+          </td>
+        
+          <td>
+            <button type="button" name="eliminar" (click)='deleted(producto.id_producto)' class="btn btn-danger btn-sm">eliminar</button>
+          </td>
+    
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

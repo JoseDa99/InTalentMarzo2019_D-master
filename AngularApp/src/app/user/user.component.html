@@ -1,0 +1,44 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Usuarios</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Listado de usuarios</h5>
+      <!-- <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['../productosFormulario/form']">
+          Crear producto
+        </button>
+      </div>
+      -->
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Nombre de Usuario</th>
+            <th>Direccion</th>
+            <th>Dni</th>
+            <th>
+              editar
+            </th>
+            <th>eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios">
+          
+            <td> {{ usuario.id_user }}</td>
+            <td> {{ usuario.nombre }}</td>
+            <td> {{ usuario.username }}</td>
+            <td>{{ usuario.direccion }}</td>
+            <td>  {{ usuario.dni }}</td>
+            <td>
+              <button type="button" name="editar" [routerLink]="['../user/user', id_user]" class="btn btn-primary btn-sm">editar</button>
+            </td>
+            <td>
+              <button type="button" name="eliminar" (click)='deleted(usuario.id_user)' class="btn btn-danger btn-sm">eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  </div>

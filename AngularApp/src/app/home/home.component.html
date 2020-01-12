@@ -1,0 +1,14 @@
+<div *ngIf="info.token; else loggedOut">
+  <h5 class="text-primary">Your Information</h5>
+  <p>
+    <strong>Username:</strong> {{info.username}}<br/>
+    <strong>Roles:</strong> {{info.authorities}}<br />
+    <strong>Token:</strong> {{info.token}}.
+  </p>
+  <app-simple-carousel></app-simple-carousel>
+
+</div>
+
+<ng-template #loggedOut>
+    <app-simple-carousel></app-simple-carousel>
+</ng-template>

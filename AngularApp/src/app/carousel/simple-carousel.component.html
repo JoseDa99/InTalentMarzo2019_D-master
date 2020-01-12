@@ -1,0 +1,26 @@
+<div id="container">
+    <div class="carousel"
+      ng2-carouselamos
+      class="slides-wrapper"
+      [items]="images"
+      [width]="850"
+      [$prev]="prev"
+      [$next]="next"
+      [$item]="item"
+    >
+    </div>
+   
+   
+    <ng-template #prev>
+        <img src="https://img.icons8.com/metro/26/000000/sort-left.png" id="left" />
+    </ng-template>
+    <ng-template #next>
+        <img src="https://img.icons8.com/metro/26/000000/sort-right.png" id="right" />
+    </ng-template>
+    <ng-template #item let-item let-i="index">
+   
+    <div class="slide-items">
+      <img src="{{ item.name }}">
+    </div>
+   
+  </ng-template>
